@@ -13,6 +13,8 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.KeyboardArrowRight
@@ -58,11 +60,14 @@ fun BookListItem(
             modifier = Modifier
                 .padding(16.dp)
                 .fillMaxWidth()
-                .height(IntrinsicSize.Min)
+                .height(IntrinsicSize.Min),
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.spacedBy(16.dp)
         ) {
             Box(
                 modifier = Modifier
-                    .height(100.dp),
+                    .height(100.dp)
+                    .widthIn(max = 80.dp), // 체크 필요
                 contentAlignment = Alignment.Center
             ) {
                 var imageLoadResult by remember {
@@ -101,7 +106,7 @@ fun BookListItem(
                             modifier = modifier
                                 .aspectRatio(
                                     ratio = 0.65f,
-                                    matchHeightConstraintsFirst = true
+                                    matchHeightConstraintsFirst = true,
                                 )
                         )
                     }

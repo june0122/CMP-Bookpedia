@@ -13,6 +13,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.plcoding.bookpedia.book.domain.Book
 import com.plcoding.bookpedia.book.presentation.book_list.BookListScreen
 import com.plcoding.bookpedia.book.presentation.book_list.BookListState
+import com.plcoding.bookpedia.book.presentation.book_list.books
 import com.plcoding.bookpedia.book.presentation.book_list.components.BookSearchBar
 import com.plcoding.bookpedia.core.presentation.SandYellow
 
@@ -32,22 +33,6 @@ private fun BookSearchBarPreview() {
                 .fillMaxWidth()
         )
     }
-}
-
-private val books = (1 .. 100).map {
-    Book(
-        id = it.toString(),
-        title = "Book $it",
-        imageUrl = "https://test.com",
-        authors = listOf("june0122"),
-        firstPublishYear = null,
-        description = "Description $it",
-        languages = emptyList(),
-        averageRating = 4.67854,
-        ratingCount = 5,
-        numPages = 100,
-        numEditions = 3,
-    )
 }
 
 @Preview
